@@ -1,0 +1,40 @@
+set term png size 800,800
+set output "GCMC-acceptance.png"
+
+
+# Define plot style 'stacked histogram'
+# with additional settings
+set style data histogram
+set style histogram rowstacked
+set style fill solid border -1
+set boxwidth 0.9
+
+set style line 1 lt 1 lc "black" lw 3 pt 7 ps 1.5
+set style line 2 lt 1 lc "red" lw 3 pt 5 ps 1.5
+set style line 3 lt 1 lc "green" lw 3 pt 9 ps 1.5
+
+set style line 4 lt 0  lc "black" lw 2 
+set style line 81 lt 0 lc rgb "#808080" lw 0.5
+
+set nokey 
+#set key font ", 12" left top
+
+set ylabel "% Acceptance" font ", 20" offset char 0.75
+set xlabel "CD-CBMC parameters (position:orientation)" font ", 20" offset char 0,-1
+#set ytics 4
+set xtics rotate by 45 right
+set xtics nomirror
+set ytics nomirror
+set grid ytics back ls 81
+set border 4095 back ls 1 
+set tics font ", 16"
+
+#fit to the data
+#set xrange [0:10]
+#f1(x) = m*x + b
+
+#fit f1(x) "010k-transfer-acceptance.dat" u 1:2 via m,b
+#set size 1, 0.95
+#set origin 0.0, 0.05
+plot "010k-transfer-acceptance.dat" u 2 w lp ls 1 t "10K molecules" , \
+    "100k-transfer-acceptance.dat" u 2:xtic(1) w lp ls 2 t "100K molecules"

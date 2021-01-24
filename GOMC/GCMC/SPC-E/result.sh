@@ -18,7 +18,7 @@ do
 
     OUT_FILE_ACC=${SYS_DIR}/"${sys}-transfer-acceptance.dat"
     OUT_FILE_TIME=${SYS_DIR}/"${sys}-transfer-profile.dat"
-    echo -e "#CBMC"   "\t %Acceptance" > ${OUT_FILE_ACC}
+    echo -e "#CBMC"   "\t %Acceptance_AVG" "\t %Acceptance_insert" "\t %Acceptance_delete" > ${OUT_FILE_ACC}
     echo -e "#CBMC"   "\t %Average-CPU (nano sec)" "\t Average-GPU (nano sec)" > ${OUT_FILE_TIME}
     echo -e "#CBMC"   "\t %Short-Range" "\t Long-range" >> ${OUT_FILE_TIME}
 
@@ -50,7 +50,7 @@ do
         box_0=`grep -w "Accepted Mol-Transfer" ${LOG_FILE} | awk '{print $5}'`
         box_1=`grep -w "Accepted Mol-Transfer" ${LOG_FILE} | awk '{print $6}'`
         acceptance=$( echo "0.5 * (${box_0} + ${box_1})" | bc )
-        echo -e "${cbmc} \t ${acceptance}" >> ${OUT_FILE_ACC}
+        echo -e "${cbmc} \t ${acceptance} \t ${box_0} \t ${box_1}" >> ${OUT_FILE_ACC}
 
         cpu=`grep -w "transform_swap_move" ${LOG_FILE} | awk '{print $4}'`
         gpu=`grep -w "ewald_molecule_swap_recip_energy" ${LOG_FILE} | awk '{print $4}'`
