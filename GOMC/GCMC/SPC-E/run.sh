@@ -4,7 +4,7 @@ cudaFile=/Common/linux/cuda-10.2
 LOG="-out.log"
 CPU=4
 SYSTEM=(010k 050k 100k)
-CBMC=(cbmc-001-001 cbmc-005-005 cbmc-010-010 cbmc-020-010 cbmc-050-010 cbmc-100-010)
+CBMC=(cbmc-001-001 cbmc-005-005 cbmc-010-010 cbmc-020-010 cbmc-020-020 cbmc-050-010 cbmc-050-020 cbmc-050-030 cbmc-100-010 cbmc-100-020 cbmc-100-030)
 
 BASE_DIR=`pwd`
 
