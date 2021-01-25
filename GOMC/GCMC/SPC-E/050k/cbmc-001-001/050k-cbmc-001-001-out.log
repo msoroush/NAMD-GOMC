@@ -1,472 +1,0 @@
-
-**** collection configuration ****
-	output_filename = /Projects/msoroush/proposal/NIH/wsu-uiuc/simFiles/NAMD-GOMC/GOMC/GCMC/SPC-E/050k/cbmc-001-001/050k-cbmc-001-001
-	force-overwrite = true
-	stop-on-exit = true
-	export_sqlite = true
-	stats = true
-	capture-range = none
-	stop-on-range-end = false
-	Beta: ftrace events:
-	ftrace-keep-user-config = false
-	trace-GPU-context-switch = false
-	delay = 0 seconds
-	duration = 0 seconds
-	kill = signal number 15
-	inherit-environment = true
-	show-output = true
-	trace-fork-before-exec = false
-	sample_cpu = true
-	backtrace_method = LBR
-	wait = all
-	trace_cublas = false
-	trace_cuda = true
-	trace_cudnn = false
-	trace_nvtx = true
-	trace_mpi = false
-	trace_openacc = false
-	trace_vulkan = false
-	trace_opengl = false
-	trace_osrt = false
-	osrt-threshold = 0 nanoseconds
-	cudabacktrace = false
-	cudabacktrace-threshold = 0 nanoseconds
-	profile_processes = tree
-	application command = /Projects/msoroush/proposal/NIH/wsu-uiuc/codes/GOMC/bin/GOMC_GPU_GCMC
-	application arguments = +p4 in.conf 
-	application working directory = /Projects/msoroush/proposal/NIH/wsu-uiuc/simFiles/NAMD-GOMC/GOMC/GCMC/SPC-E/050k/cbmc-001-001
-	NVTX profiler range trigger = 
-	NVTX profiler domain trigger = 
-	environment variables:
-	Collecting data...
-Info: GOMC Version 2.70
-Info: Start Time: Sat Jan 23 20:42:48 2021
-Info: Host Name: sunnyvale.ks.uiuc.edu
-CPU information:
-Info: Total number of CPUs: 32
-Info: Total number of CPUs available: 32
-Info: Model name: Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz
-Info: System name: Linux
-Info: Release: 4.18.0-147.5.1.el8_1.x86_64
-Info: Version: #1 SMP Wed Feb 5 02:00:39 UTC 2020
-Info: Kernel Architecture: x86_64
-Info: Total Ram: 64056.8MB
-Info: Used Ram: 6046.1MB
-Info: Working in the current directory: /Projects/msoroush/proposal/NIH/wsu-uiuc/simFiles/NAMD-GOMC/GOMC/GCMC/SPC-E/050k/cbmc-001-001
-GPU information:
-Info: Device Number: 0
-Info: Device name: TITAN V JHH Special Edition
-Info: Memory Clock Rate (KHz): 850000
-Info: Memory Bus Width (bits): 4096
-Info: Peak Memory Bandwidth (GB/s): 870.400000
-Info: Using Device Number: 0
-Info: GOMC COMPILED TO RUN GRAND CANONICAL ENSEMBLE.
-Info: Number of threads                  4 
-Info: Compiled with OpenMP Version       5.0 Preview 1
-
-Reading Input File:                      in.conf
-Info: Constant seed                      Active 
-Info: PARAMETER file                     CHARMM format! 
-Info: Input Temperature                  300.0000 K
-Info: Switch truncated potential         Active 
-Info: Cutoff                             12.0000 A
-Info: Switch distance                    10.0000 
-Info: Long Range Correction              Inactive 
-Info: Short Range Cutoff                 1.0000 A
-Info: Exclude                            ONE-FOUR 
-Info: Ewald Summation                    Active 
-Info: Cache Ewald Fourier                Inactive 
-Info: Ewald Summation Tolerance          1.000E-05 
-Info: Pressure calculation               Inactive 
-Info: Total number of steps              10000 
-Info: Number of equilibration steps      1000 
-Info: Move adjustment frequency          1000 
-Info: Displacement move frequency        0.0000 
-Info: Rotation move frequency            0.0000 
-Info: Regrowth move frequency            0.0000 
-Info: Molecule swap move frequency       1.0000 
-Info: CBMC First atom trials             1    
-Info: CBMC Secondary atom trials         1    
-Info: CBMC Angle trials                  1    
-Info: CBMC Dihedral trials               1    
-Info: Chemical potential                 H2O    -4500.0000 K
-Info: Output name                        OUT 
-Info: Printing DCD                       Inactive 
-Info: Printing restart coordinate        Inactive 
-Info: Console output frequency           1000 
-Info: Average output                     Inactive 
-Info: Histogram output                   Inactive 
-Info: Histogram sample frequency         500 
-Default: Intra-Swap move frequency       0.0000 
-Default: Multi-Particle move frequency   0.0000 
-Default: Intra-MEMC move frequency       0.0000 
-Default: Crank-Shaft move frequency      0.0000 
-Default: MEMC move frequency             0.0000 
-Default: CFCMC move frequency            0.0000 
-Default: Box  0  CutoffCoulomb           12.0000 A
-Default: Box  1  CutoffCoulomb           12.0000 A
-Finished Reading Input File:             in.conf
-
-Reading from CHARMM-Style parameter file:  	../common/SPCE.par
-Reading BONDS parameters.
-Reading ANGLES parameters.
-Reading NONBONDED parameters.
-Reading from box 0 PDB coordinate file:  	../common/water_sys.pdb
-Finished reading:                       	../common/water_sys.pdb
-Reading from box 1 PDB coordinate file:  	../common/water_reservoir.pdb
-Finished reading:                       	../common/water_reservoir.pdb
-Random number seed: 800
-
-Molecules in PSF:
-Molecule Kind: H2O
-Idx	name	type	charge	mass
-0	O1	B	-0.8476	15.9994
-1	H1	A	0.4238	1.0079
-2	H2	A	0.4238	1.0079
-
-Bonds:
-[0 1] [0 2] 
-
-Angles:
-[1 0 2] 
-
-Dihedrals:
-
-Bonds parameter:
-Atom Types                             Kb(K)           b0(A) 
-B	A	                         FIX           1.0000 
-
-Angles parameter:
-Atom Types                         Ktheta(K)         theta0(degree) 
-A	B	A	                 FIX         109.4710 
-
-Dihedrals parameter:
-Atom Types                           Kchi(K)    n    delta(degree) 
-
-NonBonded 1-4 parameters:
-Type1  Type2             Epsilon(K)    Sigma(A)       N 
-B      B                    39.0945      1.5828   12.00 
-B      A                     0.0000      0.7914   12.00 
-A      A                     0.0000      0.0000   12.00 
-
-NonBonded parameters:
-Type1  Type2             Epsilon(K)    Sigma(A)       N 
-B      B                    78.1891      3.1656   12.00 
-B      A                     0.0000      1.5828   12.00 
-A      A                     0.0000      0.0000   12.00 
-
-Info: Box  0:  Periodic Cell Basis 1     116.336   0.000   0.000 
-Info: Box  0:  Periodic Cell Basis 2      0.000 116.336   0.000 
-Info: Box  0:  Periodic Cell Basis 3      0.000   0.000 116.336 
-
-Info: Box  1:  Periodic Cell Basis 1     116.336   0.000   0.000 
-Info: Box  1:  Periodic Cell Basis 2      0.000 116.336   0.000 
-Info: Box  1:  Periodic Cell Basis 3      0.000   0.000 116.336 
-
-Minimum coordinates in box 0: x =  -58.939, y =  -58.919, z =  -58.907
-Maximum coordinates in box 0: x =   58.957, y =   58.947, z =   58.925
-Wrapping molecules inside the simulation box 0:
-Minimum coordinates in box 1: x =   -0.075, y =   -0.076, z =   -0.045
-Maximum coordinates in box 1: x =  114.372, y =  114.371, z =  114.398
-Wrapping molecules inside the simulation box 1:
-Box: 0, RecipVectors:  94091, kmax: 36
-Printed combined psf to file OUT_merged.psf
-
-################################################################################
-########################## INITIAL SIMULATION ENERGY ###########################
-
-ETITLE:     STEP           TOTAL        INTRA(B)       INTRA(NB)       INTER(LJ)             LRC     TOTAL_ELECT            REAL           RECIP            SELF            CORR
-
-ENER_0:        0     -2.7716e+08      0.0000e+00      0.0000e+00      5.2120e+07      0.0000e+00     -3.2928e+08     -3.1247e+08      1.0679e+06     -1.4355e+09      1.4176e+09
-
-ENER_1:        0      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00
-
-STITLE:     STEP        TOTALMOL     TOT_DENSITY
-
-STAT_0:        0           50000      9.4998e+02
-
-STAT_1:        0           50000      9.4998e+02
-
-################################################################################
-############################# STARTING SIMULATION ##############################
-
-MTITLE:     STEP        TRANSFER      TRANACCEPT     TRANACCEPT%
-
-ETITLE:     STEP           TOTAL        INTRA(B)       INTRA(NB)       INTER(LJ)             LRC     TOTAL_ELECT            REAL           RECIP            SELF            CORR
-
-STITLE:     STEP        TOTALMOL     TOT_DENSITY
-
-MOVE_0:     1000             511               0      0.0000e+00
-
-ENER_0:     1000     -2.7716e+08      0.0000e+00      0.0000e+00      5.2120e+07      0.0000e+00     -3.2928e+08     -3.1247e+08      1.0679e+06     -1.4355e+09      1.4176e+09
-
-STAT_0:     1000           50000      9.4998e+02
-
-MOVE_1:     1000             489               0      0.0000e+00
-
-ENER_1:     1000      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00
-
-STAT_1:     1000           50000      9.4998e+02
-
-Steps/sec: 893.941, Simulation ends in:   0 d:   0 h:   1 m 
-
-MOVE_0:     2000            1019               0      0.0000e+00
-
-ENER_0:     2000     -2.7716e+08      0.0000e+00      0.0000e+00      5.2120e+07      0.0000e+00     -3.2928e+08     -3.1247e+08      1.0679e+06     -1.4355e+09      1.4176e+09
-
-STAT_0:     2000           50000      9.4998e+02
-
-MOVE_1:     2000             981               0      0.0000e+00
-
-ENER_1:     2000      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00
-
-STAT_1:     2000           50000      9.4998e+02
-
-Steps/sec: 872.945, Simulation ends in:   0 d:   0 h:   1 m 
-
-MOVE_0:     3000            1532               0      0.0000e+00
-
-ENER_0:     3000     -2.7716e+08      0.0000e+00      0.0000e+00      5.2120e+07      0.0000e+00     -3.2928e+08     -3.1247e+08      1.0679e+06     -1.4355e+09      1.4176e+09
-
-STAT_0:     3000           50000      9.4998e+02
-
-MOVE_1:     3000            1468               0      0.0000e+00
-
-ENER_1:     3000      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00
-
-STAT_1:     3000           50000      9.4998e+02
-
-Steps/sec: 878.060, Simulation ends in:   0 d:   0 h:   1 m 
-
-MOVE_0:     4000            2041               0      0.0000e+00
-
-ENER_0:     4000     -2.7716e+08      0.0000e+00      0.0000e+00      5.2120e+07      0.0000e+00     -3.2928e+08     -3.1247e+08      1.0679e+06     -1.4355e+09      1.4176e+09
-
-STAT_0:     4000           50000      9.4998e+02
-
-MOVE_1:     4000            1959               0      0.0000e+00
-
-ENER_1:     4000      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00
-
-STAT_1:     4000           50000      9.4998e+02
-
-Steps/sec: 864.451, Simulation ends in:   0 d:   0 h:   1 m 
-
-MOVE_0:     5000            2548               0      0.0000e+00
-
-ENER_0:     5000     -2.7716e+08      0.0000e+00      0.0000e+00      5.2120e+07      0.0000e+00     -3.2928e+08     -3.1247e+08      1.0679e+06     -1.4355e+09      1.4176e+09
-
-STAT_0:     5000           50000      9.4998e+02
-
-MOVE_1:     5000            2452               0      0.0000e+00
-
-ENER_1:     5000      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00
-
-STAT_1:     5000           50000      9.4998e+02
-
-Steps/sec: 818.154, Simulation ends in:   0 d:   0 h:   1 m 
-
-MOVE_0:     6000            3031               0      0.0000e+00
-
-ENER_0:     6000     -2.7716e+08      0.0000e+00      0.0000e+00      5.2120e+07      0.0000e+00     -3.2928e+08     -3.1247e+08      1.0679e+06     -1.4355e+09      1.4176e+09
-
-STAT_0:     6000           50000      9.4998e+02
-
-MOVE_1:     6000            2969               0      0.0000e+00
-
-ENER_1:     6000      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00
-
-STAT_1:     6000           50000      9.4998e+02
-
-Steps/sec: 852.801, Simulation ends in:   0 d:   0 h:   1 m 
-
-MOVE_0:     7000            3553               0      0.0000e+00
-
-ENER_0:     7000     -2.7716e+08      0.0000e+00      0.0000e+00      5.2120e+07      0.0000e+00     -3.2928e+08     -3.1247e+08      1.0679e+06     -1.4355e+09      1.4176e+09
-
-STAT_0:     7000           50000      9.4998e+02
-
-MOVE_1:     7000            3447               0      0.0000e+00
-
-ENER_1:     7000      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00
-
-STAT_1:     7000           50000      9.4998e+02
-
-Steps/sec: 877.492, Simulation ends in:   0 d:   0 h:   1 m 
-
-MOVE_0:     8000            4026               0      0.0000e+00
-
-ENER_0:     8000     -2.7716e+08      0.0000e+00      0.0000e+00      5.2120e+07      0.0000e+00     -3.2928e+08     -3.1247e+08      1.0679e+06     -1.4355e+09      1.4176e+09
-
-STAT_0:     8000           50000      9.4998e+02
-
-MOVE_1:     8000            3974               0      0.0000e+00
-
-ENER_1:     8000      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00
-
-STAT_1:     8000           50000      9.4998e+02
-
-Steps/sec: 784.892, Simulation ends in:   0 d:   0 h:   1 m 
-
-MOVE_0:     9000            4532               1      2.2065e-02
-
-ENER_0:     9000     -2.7716e+08      0.0000e+00      0.0000e+00      5.2121e+07      0.0000e+00     -3.2928e+08     -3.1248e+08      1.0679e+06     -1.4355e+09      1.4176e+09
-
-STAT_0:     9000           50001      9.5000e+02
-
-MOVE_1:     9000            4468               0      0.0000e+00
-
-ENER_1:     9000      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00
-
-STAT_1:     9000           49999      9.4996e+02
-
-Steps/sec: 844.480, Simulation ends in:   0 d:   0 h:   1 m 
-
-MOVE_0:    10000            5020               1      1.9920e-02
-
-ENER_0:    10000     -2.7716e+08      0.0000e+00      0.0000e+00      5.2121e+07      0.0000e+00     -3.2928e+08     -3.1248e+08      1.0679e+06     -1.4355e+09      1.4176e+09
-
-STAT_0:    10000           50001      9.5000e+02
-
-MOVE_1:    10000            4980               0      0.0000e+00
-
-ENER_1:    10000      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00      0.0000e+00
-
-STAT_1:    10000           49999      9.4996e+02
-
-Simulation Time (total): 1.1728e+01 sec.
-
-Move Type                Mol. Kind      BOX_0      BOX_1      
-% Accepted Mol-Transfer        H2O      0.01992    0.00000 
-
-Displacement:                            0.0000    sec.
-Rotation:                                0.0000    sec.
-MultiParticle:                           0.0000    sec.
-Intra-Swap:                              0.0000    sec.
-Regrowth:                                0.0000    sec.
-Intra-MEMC:                              0.0000    sec.
-Crank-Shaft:                             0.0000    sec.
-Mol-Transfer:                           11.7009    sec.
-MEMC:                                    0.0000    sec.
-CFCMC:                                   0.0000    sec.
-
-Info: GOMC Version 2.70
-Info: Completed at: Sat Jan 23 20:43:05 2021
-Info: On hostname: sunnyvale.ks.uiuc.edu
-	Generating the /Projects/msoroush/proposal/NIH/wsu-uiuc/simFiles/NAMD-GOMC/GOMC/GCMC/SPC-E/050k/cbmc-001-001/050k-cbmc-001-001.qdstrm file.
-	Capturing raw events...
-
-	**** WARNING: The collection generated 1114344 total events. ****
-	Importing this QDSTRM file into the NVIDIA Nsight Systems GUI may take several minutes to complete.
-
-	Capturing symbol files...
-	Saving diagnostics...
-	Saving qdstrm file to disk...
-	Finished saving file.
-
-
-Importing the qdstrm file using /Common/linux/encap/cuda-10.2/nsight-systems-2019.5.2/host-linux-x64/QdstrmImporter.
-
-Importing...
-
-Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [0%                                                  ]Importing [1%                                                  ]Importing [1%                                                  ]Importing [1%                                                  ]Importing [1%                                                  ]Importing [1%                                                  ]Importing [1%                                                  ]Importing [1%                                                  ]Importing [1%                                                  ]Importing [1%                                                  ]Importing [1%                                                  ]Importing [=2%                                                 ]Importing [=2%                                                 ]Importing [=2%                                                 ]Importing [=2%                                                 ]Importing [=2%                                                 ]Importing [=3%                                                 ]Importing [=3%                                                 ]Importing [=3%                                                 ]Importing [=3%                                                 ]Importing [=3%                                                 ]Importing [=3%                                                 ]Importing [=3%                                                 ]Importing [=3%                                                 ]Importing [=3%                                                 ]Importing [=3%                                                 ]Importing [==4%                                                ]Importing [==4%                                                ]Importing [==4%                                                ]Importing [==4%                                                ]Importing [==5%                                                ]Importing [==5%                                                ]Importing [==5%                                                ]Importing [==5%                                                ]Importing [==5%                                                ]Importing [==5%                                                ]Importing [==5%                                                ]Importing [==5%                                                ]Importing [==5%                                                ]Importing [==5%                                                ]Importing [===6%                                               ]Importing [===6%                                               ]Importing [===6%                                               ]Importing [===6%                                               ]Importing [===6%                                               ]Importing [===7%                                               ]Importing [===7%                                               ]Importing [===7%                                               ]Importing [===7%                                               ]Importing [===7%                                               ]Importing [===7%                                               ]Importing [===7%                                               ]Importing [===7%                                               ]Importing [===7%                                               ]Importing [===7%                                               ]Importing [====8%                                              ]Importing [====8%                                              ]Importing [====8%                                              ]Importing [====8%                                              ]Importing [====9%                                              ]Importing [====9%                                              ]Importing [====9%                                              ]Importing [====9%                                              ]Importing [====9%                                              ]Importing [====9%                                              ]Importing [====9%                                              ]Importing [====9%                                              ]Importing [====9%                                              ]Importing [====9%                                              ]Importing [=====10%                                             ]Importing [=====10%                                             ]Importing [=====10%                                             ]Importing [=====10%                                             ]Importing [=====10%                                             ]Importing [=====11%                                             ]Importing [=====11%                                             ]Importing [=====11%                                             ]Importing [=====11%                                             ]Importing [=====11%                                             ]Importing [=====11%                                             ]Importing [=====11%                                             ]Importing [=====11%                                             ]Importing [=====11%                                             ]Importing [=====11%                                             ]Importing [======12%                                            ]Importing [======12%                                            ]Importing [======12%                                            ]Importing [======12%                                            ]Importing [======12%                                            ]Importing [======12%                                            ]Importing [======13%                                            ]Importing [======13%                                            ]Importing [======13%                                            ]Importing [======13%                                            ]Importing [======13%                                            ]Importing [======13%                                            ]Importing [======13%                                            ]Importing [======13%                                            ]Importing [======13%                                            ]Importing [=======14%                                           ]Importing [=======14%                                           ]Importing [=======14%                                           ]Importing [=======14%                                           ]Importing [=======14%                                           ]Importing [=======14%                                           ]Importing [=======14%                                           ]Importing [=======15%                                           ]Importing [=======15%                                           ]Importing [=======15%                                           ]Importing [=======15%                                           ]Importing [=======15%                                           ]Importing [=======15%                                           ]Importing [=======15%                                           ]Importing [========16%                                          ]Importing [========16%                                          ]Importing [========16%                                          ]Importing [========16%                                          ]Importing [========16%                                          ]Importing [========16%                                          ]Importing [========16%                                          ]Importing [========17%                                          ]Importing [========17%                                          ]Importing [========17%                                          ]Importing [========17%                                          ]Importing [========17%                                          ]Importing [========17%                                          ]Importing [========17%                                          ]Importing [=========18%                                         ]Importing [=========18%                                         ]Importing [=========18%                                         ]Importing [=========18%                                         ]Importing [=========18%                                         ]Importing [=========18%                                         ]Importing [=========18%                                         ]Importing [=========18%                                         ]Importing [=========18%                                         ]Importing [=========19%                                         ]Importing [=========19%                                         ]Importing [=========19%                                         ]Importing [=========19%                                         ]Importing [=========19%                                         ]Importing [=========19%                                         ]Importing [==========20%                                        ]Importing [==========20%                                        ]Importing [==========20%                                        ]Importing [==========20%                                        ]Importing [==========20%                                        ]Importing [==========20%                                        ]Importing [==========21%                                        ]Importing [==========21%                                        ]Importing [==========21%                                        ]Importing [==========21%                                        ]Importing [==========21%                                        ]Importing [==========21%                                        ]Importing [==========21%                                        ]Importing [==========21%                                        ]Importing [==========21%                                        ]Importing [===========22%                                       ]Importing [===========22%                                       ]Importing [===========22%                                       ]Importing [===========22%                                       ]Importing [===========22%                                       ]Importing [===========22%                                       ]Importing [===========22%                                       ]Importing [===========22%                                       ]Importing [===========22%                                       ]Importing [===========22%                                       ]Importing [===========23%                                       ]Importing [===========23%                                       ]Importing [===========23%                                       ]Importing [===========23%                                       ]Importing [===========23%                                       ]Importing [===========23%                                       ]Importing [===========23%                                       ]Importing [===========23%                                       ]Importing [===========23%                                       ]Importing [===========23%                                       ]Importing [============24%                                      ]Importing [============24%                                      ]Importing [============24%                                      ]Importing [============24%                                      ]Importing [============24%                                      ]Importing [============24%                                      ]Importing [============24%                                      ]Importing [============24%                                      ]Importing [============25%                                      ]Importing [============25%                                      ]Importing [============25%                                      ]Importing [============25%                                      ]Importing [============25%                                      ]Importing [============25%                                      ]Importing [=============26%                                     ]Importing [=============26%                                     ]Importing [=============26%                                     ]Importing [=============26%                                     ]Importing [=============26%                                     ]Importing [=============27%                                     ]Importing [=============27%                                     ]Importing [=============27%                                     ]Importing [=============27%                                     ]Importing [=============27%                                     ]Importing [=============27%                                     ]Importing [==============28%                                    ]Importing [==============28%                                    ]Importing [==============28%                                    ]Importing [==============28%                                    ]Importing [==============28%                                    ]Importing [==============28%                                    ]Importing [==============28%                                    ]Importing [==============28%                                    ]Importing [==============29%                                    ]Importing [==============29%                                    ]Importing [==============29%                                    ]Importing [==============29%                                    ]Importing [==============29%                                    ]Importing [==============29%                                    ]Importing [==============29%                                    ]Importing [===============30%                                   ]Importing [===============30%                                   ]Importing [===============30%                                   ]Importing [===============30%                                   ]Importing [===============30%                                   ]Importing [===============30%                                   ]Importing [===============30%                                   ]Importing [===============30%                                   ]Importing [===============30%                                   ]Importing [===============30%                                   ]Importing [===============30%                                   ]Importing [===============30%                                   ]Importing [===============31%                                   ]Importing [===============31%                                   ]Importing [===============31%                                   ]Importing [===============31%                                   ]Importing [===============31%                                   ]Importing [===============31%                                   ]Importing [===============31%                                   ]Importing [===============31%                                   ]Importing [===============31%                                   ]Importing [===============31%                                   ]Importing [===============31%                                   ]Importing [===============31%                                   ]Importing [===============31%                                   ]Importing [===============31%                                   ]Importing [===============31%                                   ]Importing [===============31%                                   ]Importing [===============31%                                   ]Importing [===============31%                                   ]Importing [================32%                                  ]Importing [================32%                                  ]Importing [================32%                                  ]Importing [================32%                                  ]Importing [================32%                                  ]Importing [================32%                                  ]Importing [================32%                                  ]Importing [================32%                                  ]Importing [================32%                                  ]Importing [================32%                                  ]Importing [================32%                                  ]Importing [================32%                                  ]Importing [================32%                                  ]Importing [================32%                                  ]Importing [================32%                                  ]Importing [================32%                                  ]Importing [================33%                                  ]Importing [================33%                                  ]Importing [================33%                                  ]Importing [================33%                                  ]Importing [================33%                                  ]Importing [================33%                                  ]Importing [================33%                                  ]Importing [================33%                                  ]Importing [================33%                                  ]Importing [================33%                                  ]Importing [================33%                                  ]Importing [================33%                                  ]Importing [=================34%                                 ]Importing [=================34%                                 ]Importing [=================34%                                 ]Importing [=================34%                                 ]Importing [=================34%                                 ]Importing [=================34%                                 ]Importing [=================34%                                 ]Importing [=================34%                                 ]Importing [=================34%                                 ]Importing [=================34%                                 ]Importing [=================34%                                 ]Importing [=================34%                                 ]Importing [=================34%                                 ]Importing [=================34%                                 ]Importing [=================34%                                 ]Importing [=================34%                                 ]Importing [=================34%                                 ]Importing [=================34%                                 ]Importing [=================34%                                 ]Importing [=================35%                                 ]Importing [=================35%                                 ]Importing [=================35%                                 ]Importing [=================35%                                 ]Importing [=================35%                                 ]Importing [=================35%                                 ]Importing [=================35%                                 ]Importing [=================35%                                 ]Importing [=================35%                                 ]Importing [=================35%                                 ]Importing [=================35%                                 ]Importing [==================36%                                ]Importing [==================36%                                ]Importing [==================36%                                ]Importing [==================36%                                ]Importing [==================36%                                ]Importing [==================36%                                ]Importing [==================36%                                ]Importing [==================36%                                ]Importing [==================36%                                ]Importing [==================36%                                ]Importing [==================36%                                ]Importing [==================36%                                ]Importing [==================36%                                ]Importing [==================36%                                ]Importing [==================37%                                ]Importing [==================37%                                ]Importing [==================37%                                ]Importing [==================37%                                ]Importing [==================37%                                ]Importing [==================37%                                ]Importing [==================37%                                ]Importing [==================37%                                ]Importing [==================37%                                ]Importing [==================37%                                ]Importing [==================37%                                ]Importing [==================37%                                ]Importing [==================37%                                ]Importing [==================37%                                ]Importing [==================37%                                ]Importing [===================38%                               ]Importing [===================38%                               ]Importing [===================38%                               ]Importing [===================38%                               ]Importing [===================38%                               ]Importing [===================38%                               ]Importing [===================38%                               ]Importing [===================38%                               ]Importing [===================38%                               ]Importing [===================38%                               ]Importing [===================38%                               ]Importing [===================38%                               ]Importing [===================38%                               ]Importing [===================38%                               ]Importing [===================38%                               ]Importing [===================38%                               ]Importing [===================38%                               ]Importing [===================38%                               ]Importing [===================39%                               ]Importing [===================39%                               ]Importing [===================39%                               ]Importing [===================39%                               ]Importing [===================39%                               ]Importing [===================39%                               ]Importing [===================39%                               ]Importing [===================39%                               ]Importing [===================39%                               ]Importing [===================39%                               ]Importing [===================39%                               ]Importing [===================39%                               ]Importing [===================39%                               ]Importing [===================39%                               ]Importing [===================39%                               ]Importing [===================39%                               ]Importing [===================39%                               ]Importing [====================40%                              ]Importing [====================40%                              ]Importing [====================40%                              ]Importing [====================40%                              ]Importing [====================40%                              ]Importing [====================40%                              ]Importing [====================40%                              ]Importing [====================40%                              ]Importing [====================40%                              ]Importing [====================40%                              ]Importing [====================40%                              ]Importing [====================40%                              ]Importing [====================40%                              ]Importing [====================40%                              ]Importing [====================40%                              ]Importing [====================40%                              ]Importing [====================40%                              ]Importing [====================40%                              ]Importing [====================40%                              ]Importing [====================41%                              ]Importing [====================41%                              ]Importing [====================41%                              ]Importing [====================41%                              ]Importing [====================41%                              ]Importing [====================41%                              ]Importing [====================41%                              ]Importing [====================41%                              ]Importing [====================41%                              ]Importing [====================41%                              ]Importing [====================41%                              ]Importing [====================41%                              ]Importing [====================41%                              ]Importing [====================41%                              ]Importing [====================41%                              ]Importing [====================41%                              ]Importing [====================41%                              ]Importing [=====================42%                             ]Importing [=====================42%                             ]Importing [=====================42%                             ]Importing [=====================42%                             ]Importing [=====================42%                             ]Importing [=====================42%                             ]Importing [=====================42%                             ]Importing [=====================42%                             ]Importing [=====================42%                             ]Importing [=====================42%                             ]Importing [=====================42%                             ]Importing [=====================42%                             ]Importing [=====================42%                             ]Importing [=====================42%                             ]Importing [=====================42%                             ]Importing [=====================42%                             ]Importing [=====================43%                             ]Importing [=====================43%                             ]Importing [=====================43%                             ]Importing [=====================43%                             ]Importing [=====================43%                             ]Importing [=====================43%                             ]Importing [=====================43%                             ]Importing [=====================43%                             ]Importing [=====================43%                             ]Importing [=====================43%                             ]Importing [=====================43%                             ]Importing [=====================43%                             ]Importing [=====================43%                             ]Importing [======================44%                            ]Importing [======================44%                            ]Importing [======================44%                            ]Importing [======================44%                            ]Importing [======================44%                            ]Importing [======================44%                            ]Importing [======================44%                            ]Importing [======================44%                            ]Importing [======================44%                            ]Importing [======================45%                            ]Importing [======================45%                            ]Importing [======================45%                            ]Importing [======================45%                            ]Importing [======================45%                            ]Importing [======================45%                            ]Importing [======================45%                            ]Importing [======================45%                            ]Importing [=======================46%                           ]Importing [=======================46%                           ]Importing [=======================46%                           ]Importing [=======================46%                           ]Importing [=======================46%                           ]Importing [=======================46%                           ]Importing [=======================46%                           ]Importing [=======================46%                           ]Importing [=======================46%                           ]Importing [=======================46%                           ]Importing [=======================47%                           ]Importing [=======================47%                           ]Importing [=======================47%                           ]Importing [=======================47%                           ]Importing [=======================47%                           ]Importing [=======================47%                           ]Importing [=======================47%                           ]Importing [=======================47%                           ]Importing [========================48%                          ]Importing [========================48%                          ]Importing [========================48%                          ]Importing [========================48%                          ]Importing [========================48%                          ]Importing [========================48%                          ]Importing [========================48%                          ]Importing [========================48%                          ]Importing [========================48%                          ]Importing [========================49%                          ]Importing [========================49%                          ]Importing [========================49%                          ]Importing [========================49%                          ]Importing [========================49%                          ]Importing [========================49%                          ]Importing [========================49%                          ]Importing [========================49%                          ]Importing [========================49%                          ]Importing [=========================50%                         ]Importing [=========================50%                         ]Importing [=========================50%                         ]Importing [=========================50%                         ]Importing [=========================50%                         ]Importing [=========================51%                         ]Importing [=========================51%                         ]Importing [=========================51%                         ]Importing [=========================51%                         ]Importing [=========================51%                         ]Importing [==========================52%                        ]Importing [==========================52%                        ]Importing [==========================52%                        ]Importing [==========================52%                        ]Importing [==========================52%                        ]Importing [==========================52%                        ]Importing [==========================53%                        ]Importing [==========================53%                        ]Importing [==========================53%                        ]Importing [==========================53%                        ]Importing [==========================53%                        ]Importing [===========================54%                       ]Importing [===========================54%                       ]Importing [===========================54%                       ]Importing [===========================54%                       ]Importing [===========================54%                       ]Importing [===========================55%                       ]Importing [===========================55%                       ]Importing [===========================55%                       ]Importing [===========================55%                       ]Importing [===========================55%                       ]Importing [============================56%                      ]Importing [============================56%                      ]Importing [============================56%                      ]Importing [============================56%                      ]Importing [============================56%                      ]Importing [============================56%                      ]Importing [============================57%                      ]Importing [============================57%                      ]Importing [============================57%                      ]Importing [============================57%                      ]Importing [============================57%                      ]Importing [=============================58%                     ]Importing [=============================58%                     ]Importing [=============================58%                     ]Importing [=============================58%                     ]Importing [=============================58%                     ]Importing [=============================59%                     ]Importing [=============================59%                     ]Importing [=============================59%                     ]Importing [=============================59%                     ]Importing [=============================59%                     ]Importing [==============================60%                    ]Importing [======================================77%            ]Importing [=======================================78%           ]Importing [=======================================78%           ]Importing [=======================================78%           ]Importing [=======================================78%           ]Importing [=======================================79%           ]Importing [=======================================79%           ]Importing [=======================================79%           ]Importing [=======================================79%           ]Importing [=======================================79%           ]Importing [========================================80%          ]Importing [========================================80%          ]Importing [========================================80%          ]Importing [========================================80%          ]Importing [==================================================100%]
-Saving report to file "/Projects/msoroush/proposal/NIH/wsu-uiuc/simFiles/NAMD-GOMC/GOMC/GCMC/SPC-E/050k/cbmc-001-001/050k-cbmc-001-001.qdrep"
-Report file saved.
-Please discard the qdstrm file and use the qdrep file instead.
-
-Removed /Projects/msoroush/proposal/NIH/wsu-uiuc/simFiles/NAMD-GOMC/GOMC/GCMC/SPC-E/050k/cbmc-001-001/050k-cbmc-001-001.qdstrm as it was successfully imported.
-Please use the qdrep file instead.
-
-Exporting the qdrep file to SQLite database using /Common/linux/encap/cuda-10.2/nsight-systems-2019.5.2/host-linux-x64/nsys-exporter.
-
-
-Exported successfully to
-/Projects/msoroush/proposal/NIH/wsu-uiuc/simFiles/NAMD-GOMC/GOMC/GCMC/SPC-E/050k/cbmc-001-001/050k-cbmc-001-001.sqlite
-
-Generating CUDA API Statistics...
-CUDA API Statistics (nanoseconds)
-
-Time(%)      Total Time       Calls         Average         Minimum         Maximum  Name                                                                            
--------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------
-   60.0      4547071722       37886        120019.8            6547         3137209  cudaMemcpy                                                                      
-   14.7      1113033937       21730         51221.1            5341       216691724  cudaMalloc                                                                      
-   13.4      1014851657        5398        188005.1            3795       209311612  cudaDeviceSynchronize                                                           
-    8.7       658786283       21730         30316.9            4544         3013083  cudaFree                                                                        
-    3.1       238523272       16258         14671.1            7907        28295662  cudaLaunchKernel                                                                
-    0.0          391095          16         24443.4           11892           57231  cudaMemset                                                                      
-
-
-
-
-Generating CUDA Kernel Statistics...
-
-Generating CUDA Memory Operation Statistics...
-CUDA Kernel Statistics (nanoseconds)
-
-Time(%)      Total Time   Instances         Average         Minimum         Maximum  Name                                                                            
--------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------
-   40.4       417632558           2     208816279.0       208322584       209309974  VirialReciprocalGPU                                                             
-   27.5       285128356           2     142564178.0       142555012       142573344  BoxReciprocalSumsGPU                                                            
-   10.3       106792251           2      53396125.5        53336141        53456110  BoxInterGPU                                                                     
-   10.3       106401341           2      53200670.5        53125198        53276143  BoxInterForceGPU                                                                
-    8.6        88684005        5388         16459.5           15040           18912  SwapReciprocalGPU                                                               
-    1.9        19529749        5430          3596.6            2688           70624  DeviceReduceKernel                                                              
-    1.0        10841217        5430          1996.5            1568           10464  DeviceReduceSingleTileKernel                                                    
-    0.0            7008           2          3504.0            3488            3520  BoxReciprocalGPU                                                                
-
-
-CUDA Memory Operation Statistics (nanoseconds)
-
-Time(%)      Total Time  Operations         Average         Minimum         Maximum  Name                                                                            
--------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------
-   97.8      1653594914       16210        102010.8            1216         2357711  [CUDA memcpy DtoH]                                                              
-    2.2        37539335       21662          1733.0            1087          464029  [CUDA memcpy HtoD]                                                              
-    0.0           49728          14          3552.0            2720            4608  [CUDA memcpy DtoD]                                                              
-    0.0           35296          16          2206.0            1760            4384  [CUDA memset]                                                                   
-
-
-CUDA Memory Operation Statistics (KiB)
-
-            Total      Operations            Average            Minimum            Maximum  Name                                                                            
------------------  --------------  -----------------  -----------------  -----------------  --------------------------------------------------------------------------------
-        7924268.0           16210              488.9              0.008              735.0  [CUDA memcpy DtoH]                                                              
-          92550.0           21662                4.3              0.002             2343.0  [CUDA memcpy HtoD]                                                              
-          11761.0              16              735.0            735.086              735.0  [CUDA memset]                                                                   
-          10291.0              14              735.0            735.086              735.0  [CUDA memcpy DtoD]                                                              
-
-
-
-
-Generating NVTX Push-Pop Range Statistics...
-NVTX Push-Pop Range Statistics (nanoseconds)
-
-Time(%)      Total Time   Instances         Average         Minimum         Maximum  Range                                        
--------  --------------  ----------  --------------  --------------  --------------  ---------------------------------------------
-   26.5     11727582087           1   11727582087.0     11727582087     11727582087  MC_run                                       
-   14.9      6585854866       10000        658585.5             421        31488951  cal_energy_swap_move                         
-   14.8      6539379529        5388       1213693.3          954072        31479865  ewald_molecule_swap_recip_energy             
-   11.1      4925317105       10000        492531.7          415268         3358402  transform_swap_move                          
-   10.7      4716363658       30000        157212.1          125661         2518466  energy_CBMC_inter                            
-    9.1      4032369836           1    4032369836.0      4032369836      4032369836  initialization                               
-    5.4      2401620039           1    2401620039.0      2401620039      2401620039  read_input_files                             
-    2.1       942592949           2     471296474.5       465256052       477336897  energy_system_total(intra,inter,self,corr)   
-    1.4       620628571           1     620628571.0       620628571       620628571  psf_merged_file                              
-    1.0       441165629           2     220582814.5       218973821       222191808  ewald_box_recip_virial                       
-    0.7       301825791           2     150912895.5       150790686       151035105  ewald_box_recip_setup                        
-    0.5       220493667           4      55123416.7        32800978        83502837  energy_box_intra(intra,self,corr)            
-    0.4       192704808      200000           963.5             278          922077  energy_molecule_intra                        
-    0.3       153061564           2      76530782.0        75754245        77307319  energy_box_virial                            
-    0.3       127617193           2      63808596.5        63268196        64348997  energy_box_inter                             
-    0.3       126877072      100001          1268.8             476          666027  ewald_molecule_correction_energy             
-    0.3       114418152       10000         11441.8            7107         1094311  prepare_swap_move                            
-    0.1        23510058           1      23510058.0        23510058        23510058  destruction                                  
-    0.0        13194552       10000          1319.5             781          443882  accept_swap_move                             
-    0.0        10564029       10000          1056.4             609          395039  output_files                                 
-    0.0         5662797        5388          1051.0             697           44019  ewald_molecule_swap_correction_energy        
-    0.0         5150354           2       2575177.0         2437275         2713079  ewald_box_recip_initialization               
-    0.0         2270647        5388           421.4             203           12685  ewald_molecule_swap_self_energy              
-    0.0          985920          11         89629.1           79354          113998  console_file                                 
-    0.0            2241           2          1120.5            1066            1175  ewald_box_self_energy                        
-
-
-

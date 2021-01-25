@@ -1,0 +1,42 @@
+set term png size 800,1200
+set output "GCMC-profile.png"
+
+set multiplot layout 1,2
+
+# Define plot style 'stacked histogram'
+# with additional settings
+set style data histogram
+set style histogram rowstacked
+set style fill solid border -1
+set boxwidth 0.9
+
+set style line 1 lc "black" lw 2 dt 2
+set style line 81 lt 0 lc rgb "#808080" lw 0.5
+
+#location of legend. Turn off by `set nokey`
+set nokey 
+#set key font ", 12" left top
+
+set ylabel "milisecond" font ", 20" offset char 0.75
+set xlabel "CD-CBMC parameters (position:orientation)" font ", 20" offset char 0,-1
+set ytics 4
+set xtics rotate by 45 right
+set xtics nomirror
+set grid ytics back ls 81
+set border 4095 back ls 1 
+set tics font ", 16"
+
+set size 1.0, 0.5
+set origin 0.0, 0.0
+
+set label 1 "30K atoms" at graph 0.05,0.9 font ", 20"
+plot '010k-transfer-profile.dat' using ($2*1.0E-6) t "CPU" lc "blue", \
+    '' using ($3*1.0E-6):xtic(1) t "GPU" lc "red"
+
+
+set size 1.0, 0.5
+set origin 0.0, 0.5
+
+set label 1 "300K atoms" at graph 0.05,0.9 font ", 20"
+plot '100k-transfer-profile.dat' using ($2*1.0E-6) t "CPU" lc "blue", \
+    '' using ($3*1.0E-6):xtic(1) t "GPU" lc "red"
