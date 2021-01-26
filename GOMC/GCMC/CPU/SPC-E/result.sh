@@ -19,7 +19,7 @@ do
     OUT_FILE_ACC=${SYS_DIR}/"${sys}-transfer-acceptance.dat"
     OUT_FILE_TIME=${SYS_DIR}/"${sys}-transfer-profile.dat"
     echo -e "#CBMC"   "\t %Acceptance_AVG" "\t %Acceptance_insert" "\t %Acceptance_delete" > ${OUT_FILE_ACC}
-    echo -e "#CBMC"   "\t %Average-CPU (nano sec)" "\t Average-GPU (nano sec)" > ${OUT_FILE_TIME}
+    echo -e "#CBMC"   "\t %Average-CPU (nano sec)" "\t Average-CPU (nano sec)" > ${OUT_FILE_TIME}
     echo -e "#CBMC"   "\t %Short-Range" "\t Long-range" >> ${OUT_FILE_TIME}
 
     if [ ! -d ${SYS_DIR} ]; then
